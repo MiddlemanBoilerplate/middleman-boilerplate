@@ -5,20 +5,8 @@ activate :bower
 
 
 ###
-# Compass
-###
-
-# Change Compass configuration
-compass_config do |config|
-  config.output_style = :compressed
-  config.sass_options = { :line_comments => false }
-end
-
-
-###
 # Page options, layouts, aliases and proxies
 ###
-
 # Per-page layout changes:
 #
 # With no layout
@@ -31,12 +19,9 @@ end
 # with_layout :admin do
 #   page "/admin/*"
 # end
-
-
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
-
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
@@ -45,6 +30,8 @@ end
 ###
 # Helpers
 ###
+# return single page class
+# "home_show" instead of "home home_show"
 helpers do
   def page_class
     pclass = page_classes.split(' ')
@@ -57,7 +44,6 @@ end
 configure :development do
   activate :livereload
 end
-
 
 set :css_dir, 'assets/stylesheets'
 
